@@ -16,7 +16,7 @@ function NewItem({addItem}){
             body: JSON.stringify({
                 task: taskName,
                 category : itemCategory,
-                completed: "false",
+                completed: false,
             })
         })
         .then(r => r.json())
@@ -26,7 +26,7 @@ function NewItem({addItem}){
     }
 
     return(
-        <form onSubmit={handleSubmit}>
+        <form className="newItem" onSubmit={handleSubmit}>
             <input type="text" placeholder="Enter task desciption..." value={taskName} onChange={(e) => setTaskName(e.target.value)}/>         
             <input type="text" placeholder="Enter category..." value={category} onChange={(e) => setCategory(e.target.value)}/>  
             <button type="submit">Submit</button>          
