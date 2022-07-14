@@ -21,10 +21,23 @@ function ToDoListDisplay(){
         setToDoList(newList);
     }
 
+    function onEditItem(editedItemObj){
+        const updateList = list.map( (item) => {
+            if(item.id === editedItemObj.id){
+                return editedItemObj;
+            }
+            else {
+                return item;
+            }
+        });
+
+        setToDoList(updateList);
+    }
+
     return(
         <div className="ToDoList">
             <NewItem addItem={addItem}/>
-            <ToDoList list={toDoList} onDeleteItem={onDeleteItem}/>
+            <ToDoList list={toDoList} onDeleteItem={onDeleteItem} onEditItem={onEditItem}/>
         </div>
     )
 }
