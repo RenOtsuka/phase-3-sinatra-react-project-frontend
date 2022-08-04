@@ -4,11 +4,21 @@ import NewItem from "./NewItem";
 
 function ToDoListDisplay(){
     const [toDoList, setToDoList] = useState([]);
+    const [categoryList, setCategoryList] = useState([]);
 
     useEffect(() => {
         fetch("http://localhost:9292/todos")
         .then((r) => r.json())
         .then((data) => setToDoList(data))
+        .catch(error => alert(error));
+
+       
+    },[]);
+
+    useEffect(() => {
+        fetch(`http://localhost:9292/categories`)
+        .then((r) => r.json())
+        .then((data) => setCategoryList(data))
         .catch(error => alert(error));
     },[])
 
@@ -17,12 +27,12 @@ function ToDoListDisplay(){
     }
 
     function onDeleteItem(id){
-        const newList = list.filter((item) => item.id !== id);
+        const newList = toDoList.filter((item) => item.id !== id);
         setToDoList(newList);
     }
 
     function onEditItem(editedItemObj){
-        const updateList = list.map( (item) => {
+        const updateList = toDoList.map( (item) => {
             if(item.id === editedItemObj.id){
                 return editedItemObj;
             }
@@ -34,9 +44,12 @@ function ToDoListDisplay(){
         setToDoList(updateList);
     }
 
+    // console.log(categoryList[0].id)
+
     return(
-        <div className="ToDoList">
-            <NewItem addItem={addItem}/>
+        <div className="ToDoListDisplay">
+            <NewItem addItem={addItem} categoryList={categoryList}/>
+            <br/>
             <ToDoList list={toDoList} onDeleteItem={onDeleteItem} onEditItem={onEditItem}/>
         </div>
     )
