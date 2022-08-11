@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import EditItem from "./EditItem";
 
-function ToDoItem({id, task, category, completed, onDeleteItem, onEditItem}){
+function ToDoItem({id, task, category_id, categoryObj, onDeleteItem, onEditItem}){
 
     const [editToggle, setEditToggle] = useState(false);
     
@@ -9,33 +9,35 @@ function ToDoItem({id, task, category, completed, onDeleteItem, onEditItem}){
         fetch(`http://localhost:9292/todos/${id}`, {
             method: "DELETE",
         });
-
         onDeleteItem(id);
     }
 
-    function editItem(editedItem){
+    function handleEditItem(editedItem){
         setEditToggle(false);
         onEditItem(editedItem);
     }   
+
+    function toggle(){
+        setEditToggle((editToggle) => !editToggle)
+    }
 
     return(
         <div className="ListItem">
             {editToggle ? (
             <EditItem 
                 id={id} 
-                task={task} 
-                category={category} 
-                completed={completed}
-                editItem={editItem}/>
+                task={task}
+                category_id={category_id}
+            
+                editItem={handleEditItem}/>
             ) : (
                 <div className="body">
                     <p>{task}</p>
-                    <p>{category}</p>
-                    <p>{completed}</p>
+                    <p>{categoryObj.name}</p>
                 </div>
             )}
-            <button onClick={editItem}>Edit</button>
-            <button onClick={deleteItem}>Delete</button>
+            <button className="editButton" onClick={toggle}>Edit</button>
+            <button className="deleteButton" onClick={deleteItem}>Delete</button>
         </div>
     )
 }
