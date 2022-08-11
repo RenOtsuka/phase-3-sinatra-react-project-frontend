@@ -7,7 +7,6 @@ function Header(){
             <h1>To Do List</h1>
             <div className="SubHeader">
                 <h3>Task</h3>
-                <h3>Completed</h3>
                 <h3>Category</h3>
             </div>
         </header>
