@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #faebd7;
 }
 
 
@@ -15,7 +16,33 @@
   color: white;
 }
 
-h3{
+button, #task, #categories {
   display: inline-block;
-  width: 10%;
+  border-radius: 3px;
+  padding: 0.5rem 0;
+  margin: 0.5rem 1rem;
+  width: 10rem;
+  background: transparent;
+  color: black;
+  border: 2px solid black;
+  font-weight:bold;
 }
+
+h3, p{
+  display: inline-block;
+  width: 12%;
+  font-weight:bold;
+}
+
+header{
+  background-color: #20B2AA;
+}
+
+label{
+  font-weight:bold;
+}
+
+hr{
+  width: 20%;
+}
+
