@@ -13,6 +13,7 @@ This repository breaks down the application into components, to manage each task
 - Edit any current existing task
 - Delete any existing task
 
+![Gif](./sinatra-react-project-frontend/images/app_demo.gif)
 
 ### Backend Setup
 
