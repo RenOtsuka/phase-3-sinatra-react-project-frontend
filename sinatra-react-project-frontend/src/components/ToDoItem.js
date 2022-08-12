@@ -34,10 +34,14 @@ function ToDoItem({id, task, category_id, categoryObj, onDeleteItem, onEditItem}
                 <div className="body">
                     <p>{task}</p>
                     <p>{categoryObj.name}</p>
-                </div>
+                    <br/>
+                    <button className="editButton" onClick={toggle}>Edit</button>
+                    <button className="deleteButton" onClick={deleteItem}>Delete</button>
+                    <hr/>
+                </div> 
+                
             )}
-            <button className="editButton" onClick={toggle}>Edit</button>
-            <button className="deleteButton" onClick={deleteItem}>Delete</button>
+            
         </div>
     )
 }
