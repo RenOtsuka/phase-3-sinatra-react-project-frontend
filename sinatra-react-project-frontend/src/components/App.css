@@ -16,7 +16,7 @@
   color: white;
 }
 
-button, #task, #categories {
+button, #task, #categories, #category {
   display: inline-block;
   border-radius: 3px;
   padding: 0.5rem 0;
