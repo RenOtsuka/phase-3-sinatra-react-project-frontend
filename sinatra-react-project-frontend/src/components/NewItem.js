@@ -22,6 +22,7 @@ function NewItem({addItem, categoryList}){
         .then(data => addItem(data))
         .catch(error => alert(error));
         
+        setTaskName("");
     }
 
     const categoryOptions = categoryList.map((category) => 
