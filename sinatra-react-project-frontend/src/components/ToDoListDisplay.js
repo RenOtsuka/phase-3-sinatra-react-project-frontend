@@ -1,18 +1,10 @@
-import React, {useState, useEffect} from "react";
+// import React, {useState, useEffect} from "react";
 import ToDoList from "./ToDoList";
 import NewItem from "./NewItem";
 import Header from "./Header";
 
-function ToDoListDisplay({categoryList}){
-    const [toDoList, setToDoList] = useState([]);
-
-    useEffect(() => {
-        fetch("http://localhost:9292/todos")
-        .then((r) => r.json())
-        .then((data) => setToDoList(data))
-        .catch(error => alert(error));
-       
-    },[]);
+function ToDoListDisplay({toDoList, categoryList, setToDoList}){
+    
 
     function addItem(itemObj){
         setToDoList([...toDoList, itemObj]);
