@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './App.css'
-// import {Route, Switch} from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
 import NavBar from "./NavBar";
 import ToDoListDisplay from "./ToDoListDisplay";
 import CategoryPage from "./CategoryPage";
@@ -31,13 +31,13 @@ function App() {
 
   return (
     <div className="App">
-      {/* <NavBar/> 
+      <NavBar/> 
       <Switch>
-        <Route exact path="/todos"><ToDoListDisplay categoryList={categoryList}/></Route>
-        <Route exact path="/categories"><CategoryPage categoryList={categoryList} setCategoryList={setCategoryList}/></Route>
-      </Switch>      */}
-      <ToDoListDisplay categoryList={categoryList} toDoList={toDoList} setToDoList={setToDoList}/>
-      <CategoryPage categoryList={categoryList} setCategoryList={setCategoryList} toDoList={toDoList}/>
+        <Route exact path="/todos"><ToDoListDisplay categoryList={categoryList} toDoList={toDoList} setToDoList={setToDoList}/></Route>
+        <Route exact path="/categories"><CategoryPage categoryList={categoryList} setCategoryList={setCategoryList} toDoList={toDoList}/></Route>
+      </Switch>     
+      {/* <ToDoListDisplay categoryList={categoryList} toDoList={toDoList} setToDoList={setToDoList}/>
+      <CategoryPage categoryList={categoryList} setCategoryList={setCategoryList} toDoList={toDoList}/> */}
 
     </div>
   );
