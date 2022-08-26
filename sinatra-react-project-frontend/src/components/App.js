@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import './App.css'
 import {Route, Switch} from "react-router-dom";
 import NavBar from "./NavBar";
+import Home from "./Home";
 import ToDoListDisplay from "./ToDoListDisplay";
 import CategoryPage from "./CategoryPage";
 
@@ -35,6 +36,7 @@ function App() {
       <Switch>
         <Route exact path="/todos"><ToDoListDisplay categoryList={categoryList} toDoList={toDoList} setToDoList={setToDoList}/></Route>
         <Route exact path="/categories"><CategoryPage categoryList={categoryList} setCategoryList={setCategoryList} toDoList={toDoList}/></Route>
+        <Route exact path="/"><Home/></Route>
       </Switch>     
       {/* <ToDoListDisplay categoryList={categoryList} toDoList={toDoList} setToDoList={setToDoList}/>
       <CategoryPage categoryList={categoryList} setCategoryList={setCategoryList} toDoList={toDoList}/> */}
