@@ -29,6 +29,13 @@ The Backend is being managed in a separate repository, which uses Sinatra to han
 <br>
 [Backend](https://github.com/RenOtsuka/phase-3-sinatra-react-project)
 
+## Installation Instrucrions
+
+- Make sure to have Node.js/NPM installed ([Node.js](https://nodejs.org/en/download/))
+
+- Make sure to have React installed
+> One way is to do is to type `npx create-react-app my-app` in the cmd line
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
